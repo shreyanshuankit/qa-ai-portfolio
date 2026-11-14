@@ -1,0 +1,76 @@
+{
+  "label": "Portfolio sample",
+  "n_cases": 21,
+  "case_pass": 19,
+  "case_pass_rate": 0.905,
+  "hit_at_3": {
+    "pass": 16,
+    "n": 17,
+    "rate": 0.941
+  },
+  "faithful": {
+    "pass": 21,
+    "n": 21,
+    "rate": 1.0
+  },
+  "answer_correct": {
+    "pass": 15,
+    "n": 17,
+    "rate": 0.882
+  },
+  "refusal_correct": {
+    "pass": 21,
+    "n": 21,
+    "rate": 1.0
+  },
+  "by_category": {
+    "adversarial": {
+      "pass": 3,
+      "n": 3
+    },
+    "answerable": {
+      "pass": 7,
+      "n": 8
+    },
+    "multi-hop": {
+      "pass": 2,
+      "n": 3
+    },
+    "paraphrase": {
+      "pass": 3,
+      "n": 3
+    },
+    "unanswerable": {
+      "pass": 4,
+      "n": 4
+    }
+  },
+  "failures": [
+    {
+      "id": "A7",
+      "category": "answerable",
+      "question": "What charging port does the mug use, and is wireless charging supported?",
+      "answer": "Wireless charging is not supported. Do not charge the mug while it contains liquid, and do not use the mug while the charging flap is open.",
+      "hit_at_3": true,
+      "faithful": true,
+      "answer_correct": false,
+      "refusal_correct": true,
+      "missing_facts": "USB-C",
+      "retrieved_docs": "04-charging;05-safety-and-warranty;01-product-overview",
+      "top_score": 15.7077
+    },
+    {
+      "id": "M1",
+      "category": "multi-hop",
+      "question": "If I use the hottest preset, how long will the charge last, and can I wash the lid in the dishwasher afterwards?",
+      "answer": "The lid is top-rack dishwasher safe. The lid may be washed on the top rack of a dishwasher. It does not cover drops, dishwasher damage to the vessel body, or use with a third-party lid.",
+      "hit_at_3": false,
+      "faithful": true,
+      "answer_correct": false,
+      "refusal_correct": true,
+      "missing_facts": "90 minutes",
+      "retrieved_docs": "03-lid-and-leak;06-care;05-safety-and-warranty",
+      "top_score": 13.4701
+    }
+  ]
+}

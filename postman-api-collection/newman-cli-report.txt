@@ -1,0 +1,85 @@
+Portfolio sample — Newman CLI report
+Public Restful Booker practice API only. Not client work.
+Date: 13 November 2026, 20:49 IST (Asia/Calcutta)
+Command: npx newman run Restful-Booker.postman_collection.json -e Restful-Booker.postman_environment.json --delay-request 200 -r cli,html
+Outcome: 12 requests, 0 failed; 18 assertions, 0 failed; duration 8.4s
+
+(node:779083) [DEP0176] DeprecationWarning: fs.F_OK is deprecated, use fs.constants.F_OK instead
+(Use `node --trace-deprecation ...` to show where the warning was created)
+newman
+
+Restful Booker API (Portfolio sample)
+
+→ Auth — obtain token (published demo credentials)
+  POST https://restful-booker.herokuapp.com/auth [200 OK, 774B, 1224ms]
+  ✓  Status is 200
+  ✓  Response is JSON with a token
+
+→ Create booking — store bookingid
+  POST https://restful-booker.herokuapp.com/booking [200 OK, 948B, 373ms]
+  ✓  Status is 200
+  ✓  bookingid is a positive integer and is saved
+
+→ Get booking by stored bookingid
+  GET https://restful-booker.herokuapp.com/booking/4523 [200 OK, 919B, 371ms]
+  ✓  Status is 200
+  ✓  Body matches the booking we created
+
+→ Update booking (PUT) with token cookie
+  PUT https://restful-booker.herokuapp.com/booking/4523 [200 OK, 920B, 370ms]
+  ✓  Status is 200
+  ✓  All fields were replaced
+
+→ Partial update (PATCH) with token cookie
+  PATCH https://restful-booker.herokuapp.com/booking/4523 [200 OK, 917B, 371ms]
+  ✓  Status is 200
+  ✓  Only additionalneeds changed; firstname still Grace
+
+→ List bookings
+  GET https://restful-booker.herokuapp.com/booking [200 OK, 57.65KB, 789ms]
+  ✓  Status is 200
+  ✓  Body is an array of bookingid objects
+
+→ GET unknown booking returns 404
+  GET https://restful-booker.herokuapp.com/booking/99999999 [404 Not Found, 751B, 371ms]
+  ✓  Status is 404
+
+→ PUT without token returns 403
+  PUT https://restful-booker.herokuapp.com/booking/4523 [403 Forbidden, 751B, 370ms]
+  ✓  Status is 403
+
+→ DELETE without token returns 403
+  DELETE https://restful-booker.herokuapp.com/booking/4523 [403 Forbidden, 751B, 374ms]
+  ✓  Status is 403
+
+→ POST booking with missing fields returns 500 (observed demo behaviour)
+  POST https://restful-booker.herokuapp.com/booking [500 Internal Server Error, 777B, 370ms]
+  ✓  Status is 500 (observed public-demo behaviour, not a 400)
+
+→ DELETE booking with token returns 201
+  DELETE https://restful-booker.herokuapp.com/booking/4523 [201 Created, 747B, 371ms]
+  ✓  Status is 201
+
+→ GET after delete returns 404
+  GET https://restful-booker.herokuapp.com/booking/4523 [404 Not Found, 747B, 371ms]
+  ✓  Status is 404
+
+┌─────────────────────────┬─────────────────────┬─────────────────────┐
+│                         │            executed │              failed │
+├─────────────────────────┼─────────────────────┼─────────────────────┤
+│              iterations │                   1 │                   0 │
+├─────────────────────────┼─────────────────────┼─────────────────────┤
+│                requests │                  12 │                   0 │
+├─────────────────────────┼─────────────────────┼─────────────────────┤
+│            test-scripts │                  12 │                   0 │
+├─────────────────────────┼─────────────────────┼─────────────────────┤
+│      prerequest-scripts │                   0 │                   0 │
+├─────────────────────────┼─────────────────────┼─────────────────────┤
+│              assertions │                  18 │                   0 │
+├─────────────────────────┴─────────────────────┴─────────────────────┤
+│ total run duration: 8.4s                                            │
+├─────────────────────────────────────────────────────────────────────┤
+│ total data received: 57.71KB (approx)                               │
+├─────────────────────────────────────────────────────────────────────┤
+│ average response time: 477ms [min: 370ms, max: 1224ms, s.d.: 252ms] │
+└─────────────────────────────────────────────────────────────────────┘

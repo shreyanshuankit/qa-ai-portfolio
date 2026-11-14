@@ -1,0 +1,23 @@
+REST Assured + TestNG suite — surefire results summary
+Portfolio sample. Public Restful Booker practice API only. Not client work.
+Run date: 13 November 2026, 20:48 IST (Asia/Calcutta)
+Command: mvn test
+Environment: Eclipse Temurin JDK 17.0.21, Apache Maven 3.9.9, REST Assured 5.5.5, TestNG 7.10.2
+Outcome: 15 passed, 0 failed, 0 skipped, 15 tests
+
+Tests:
+  [PASS] AuthTests#invalidCredentialsReturnBadCredentialsReason  (2513 ms)
+  [PASS] AuthTests#validDemoCredentialsReturnToken  (1547 ms)
+  [PASS] BookingCrudTests#createBookingReturnsId  (1747 ms)
+  [PASS] BookingCrudTests#listBookingsReturnsArrayOfIds  (2186 ms)
+  [PASS] BookingCrudTests#getBookingByIdReturnsCreatedFields  (1594 ms)
+  [PASS] BookingCrudTests#putBookingWithTokenReplacesAllFields  (1519 ms)
+  [PASS] BookingCrudTests#patchBookingWithTokenUpdatesOneField  (1393 ms)
+  [PASS] BookingCrudTests#deleteBookingWithTokenReturns201  (1517 ms)
+  [PASS] BookingCrudTests#getAfterDeleteReturns404  (1576 ms)
+  [PASS] SchemaValidationTests#createResponseMatchesSchema  (1631 ms)
+  [PASS] SchemaValidationTests#getBookingMatchesSchema  (1555 ms)
+  [PASS] BookingNegativeTests#createWithMissingFieldsReturns500  (1462 ms)
+  [PASS] BookingNegativeTests#deleteWithoutTokenReturns403  (1383 ms)
+  [PASS] BookingNegativeTests#getUnknownBookingReturns404  (1478 ms)
+  [PASS] BookingNegativeTests#putWithoutTokenReturns403  (1649 ms)

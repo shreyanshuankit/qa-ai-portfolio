@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="RestfulBookerPortfolioSample" verbose="1" parallel="false">
+  <!-- Portfolio sample. Public Restful Booker practice API only. -->
+  <test name="Auth">
+    <classes>
+      <class name="com.portfolio.restfulbooker.tests.AuthTests"/>
+    </classes>
+  </test>
+  <test name="BookingCrud">
+    <classes>
+      <class name="com.portfolio.restfulbooker.tests.BookingCrudTests"/>
+    </classes>
+  </test>
+  <test name="SchemaValidation">
+    <classes>
+      <class name="com.portfolio.restfulbooker.tests.SchemaValidationTests"/>
+    </classes>
+  </test>
+  <test name="Negatives">
+    <classes>
+      <class name="com.portfolio.restfulbooker.tests.BookingNegativeTests"/>
+    </classes>
+  </test>
+</suite>

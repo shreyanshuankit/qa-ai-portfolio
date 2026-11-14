@@ -1,0 +1,29 @@
+# Dependencies and build output
+node_modules/
+target/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.class
+
+# Test run output. Checked-in evidence lives under playwright-ui-api/evidence/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+surefire-reports/
+
+# Secrets and local env
+.env
+.env.*
+!.env.example
+
+# OS / editor
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+*.iml
+.vscode/

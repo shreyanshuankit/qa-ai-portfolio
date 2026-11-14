@@ -1,0 +1,34 @@
+START 2026-11-13 20:50:14 IST
+
+Running 22 tests using 1 worker
+
+(node:779896) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [ui-chromium] › tests/ui/checkout.spec.ts:9:3 › Checkout — standard_user › empty customer information is rejected (955ms)
+  ✓   2 [ui-chromium] › tests/ui/checkout.spec.ts:23:3 › Checkout — standard_user › completes a one-item order and calculates an 8% tax (812ms)
+  ✓   3 [ui-chromium] › tests/ui/inventory-and-cart.spec.ts:15:3 › Inventory and cart — standard_user › catalog lists six products with name, price and a loaded image (504ms)
+  ✓   4 [ui-chromium] › tests/ui/inventory-and-cart.spec.ts:39:3 › Inventory and cart — standard_user › Price (low to high) sorts catalog prices in ascending order (570ms)
+  ✓   5 [ui-chromium] › tests/ui/inventory-and-cart.spec.ts:47:3 › Inventory and cart — standard_user › Name (Z to A) sorts catalog names in descending order (478ms)
+  ✓   6 [ui-chromium] › tests/ui/inventory-and-cart.spec.ts:55:3 › Inventory and cart — standard_user › adding two items then removing one updates the cart badge (621ms)
+  ✓   7 [ui-chromium] › tests/ui/inventory-and-cart.spec.ts:68:3 › Inventory and cart — standard_user › logout returns the shopper to the login page (1.4s)
+  ✓   8 [ui-chromium] › tests/ui/inventory-and-cart.spec.ts:77:3 › Session guard › opening /inventory.html while logged out shows a login error (505ms)
+  ✓   9 [ui-chromium] › tests/ui/login.spec.ts:7:3 › Login — Swag Labs (public demo) › standard_user reaches the inventory with a valid password (458ms)
+  ✓  10 [ui-chromium] › tests/ui/login.spec.ts:14:3 › Login — Swag Labs (public demo) › submitting an empty form shows that a username is required (406ms)
+  ✓  11 [ui-chromium] › tests/ui/login.spec.ts:21:3 › Login — Swag Labs (public demo) › invalid credentials show a mismatch error (400ms)
+  ✓  12 [ui-chromium] › tests/ui/login.spec.ts:30:3 › Login — Swag Labs (public demo) › locked_out_user is shown the locked-out message (406ms)
+  ✓  13 [ui-chromium] › tests/ui/login.spec.ts:38:3 › Login — Swag Labs (public demo) › pressing Enter in the password field submits the form (423ms)
+(node:780230) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  14 [api] › tests/api/reqres.spec.ts:14:3 › ReqRes public demo API › GET /api/users/2 returns a known sample user (403ms)
+  ✓  15 [api] › tests/api/reqres.spec.ts:27:3 › ReqRes public demo API › GET /api/users?page=2 returns a paginated list (337ms)
+  ✓  16 [api] › tests/api/reqres.spec.ts:37:3 › ReqRes public demo API › POST /api/users echoes a created resource (323ms)
+  ✓  17 [api] › tests/api/reqres.spec.ts:50:3 › ReqRes public demo API › GET /api/users/23 returns 404 for a missing user (347ms)
+  ✓  18 [api] › tests/api/restful-booker.spec.ts:26:3 › Restful Booker public practice API › GET /booking returns a list of booking ids (1.7s)
+  ✓  19 [api] › tests/api/restful-booker.spec.ts:35:3 › Restful Booker public practice API › POST /auth returns a token for the published demo credentials (1.3s)
+  ✓  20 [api] › tests/api/restful-booker.spec.ts:46:3 › Restful Booker public practice API › POST /booking creates a booking that can be fetched by id (1.8s)
+  ✓  21 [api] › tests/api/restful-booker.spec.ts:69:3 › Restful Booker public practice API › PATCH /booking/:id updates a field on the booking we created (1.3s)
+  ✓  22 [api] › tests/api/restful-booker.spec.ts:82:3 › Restful Booker public practice API › DELETE /booking/:id removes only the booking we created (1.5s)
+
+  22 passed (19.2s)
+END 2026-11-13 20:50:34 IST
+PW_EXIT=0
