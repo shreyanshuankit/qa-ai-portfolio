@@ -1,0 +1,4 @@
+# tzdata is needed for ZoneInfo('Asia/Calcutta') in some environments.
+tzdata>=2024.1
+# Optional: only required if you retarget the runner at a Hugging Face Space.
+gradio_client>=1.0
